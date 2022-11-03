@@ -76,7 +76,7 @@ function init() {
         str += showHTML(i);
     });
     result.innerHTML = `目前共 ${data.length} 筆資料`;
-    return (ticketCard.innerHTML = str);
+    ticketCard.innerHTML = str;
 }
 init();
 
@@ -202,12 +202,19 @@ add.addEventListener("click", () => {
         init();
 
         // 輸入完要初始化
-        ticketName.value = "";
-        imgUrl.value = "";
-        region.value = "";
-        description.value = "";
-        ticketNum.value = "";
-        price.value = "";
-        ticketRate.value = "";
+
+        // form 標籤的 DOM 元素
+        const formEl = document.querySelector(".addTicket-form");
+
+        // 在 form 標籤的 DOM 元素使用 reset 就可以直接清空資料
+        formEl.reset();
+
+        // ticketName.value = "";
+        // imgUrl.value = "";
+        // region.value = "";
+        // description.value = "";
+        // ticketNum.value = "";
+        // price.value = "";
+        // ticketRate.value = "";
     }
 });
